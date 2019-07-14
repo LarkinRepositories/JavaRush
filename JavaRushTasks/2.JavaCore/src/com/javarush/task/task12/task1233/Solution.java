@@ -4,6 +4,10 @@ package com.javarush.task.task12.task1233;
 Изоморфы наступают
 */
 
+
+import java.util.ArrayList;
+import java.util.Collections;
+
 public class Solution {
     public static void main(String[] args) throws Exception {
         int[] data = new int[]{1, 2, 3, 5, -2, -8, 0, 77, 5, 5};
@@ -18,10 +22,11 @@ public class Solution {
         if (array == null || array.length == 0) {
             return new Pair<Integer, Integer>(null, null);
         }
-
-        //напишите тут ваш код
-
-        return new Pair<Integer, Integer>(0, 0);
+        ArrayList<Integer> list = new ArrayList<>();
+        for (int i = 0; i < array.length; i++) {
+            list.add(array[i]);
+        }
+        return new Pair<Integer, Integer>(Collections.min(list), list.indexOf(Collections.min(list)));
     }
 
 
